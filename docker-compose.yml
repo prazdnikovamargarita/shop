@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: sqlite:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - DOCKER_MACHINE_IP=0.0.0.0
+      - POSTGRES_PASSWORD=sqlite
+      - PGDATA=/var/lib/sqlite/data/pgdata
+    volumes:
+      - ./sqlite:/var/lib/sqlite/data
+
+ 
